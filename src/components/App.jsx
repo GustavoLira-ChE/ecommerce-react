@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "../containers/Login";
-import '../styles/global.scss';
+import '../styles/global.css';
 
 const App = () =>{
     return(
