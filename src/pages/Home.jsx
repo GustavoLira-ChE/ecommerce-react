@@ -1,10 +1,11 @@
 import React from "react";
+import Header from "../components/Header";
 
 const Home = () => {
     return(
-        <h1>
-            Ecommerce React
-        </h1>
+        <div>
+            <Header />
+        </div>
     );
 }
 
