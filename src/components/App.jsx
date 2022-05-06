@@ -1,9 +1,13 @@
 import React from "react";
+import Login from "../containers/Login";
 import '../styles/global.scss';
 
 const App = () =>{
     return(
-        <h1>Cambio hecho para comprobar el render automatico</h1>
+        <div>
+            <h1>Cambio hecho para comprobar el render automatico</h1>
+            <Login />
+        </div>
     );
 }
 
