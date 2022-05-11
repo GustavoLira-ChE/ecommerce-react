@@ -3,7 +3,7 @@ import {BrowserRouter, Routes,  Route} from 'react-router-dom'
 import Layout from "./../containers/Layout";
 import Home from './../pages/Home';
 import Login from "./../containers/Login";
-import RecoveryPassword from "./../containers/RecoveryPassword";
+import RecoveryPassword from "../pages/RecoveryPassword";
 import NotFound from './../pages/NotFound';
 import '../styles/global.css';
 
