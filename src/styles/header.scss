@@ -9,8 +9,9 @@ nav {
 .navbar-left .menu-icon{
 	display: none;
 }
-.logo {
+.navbar-center .logo {
 	width: 100px;
+	display: none;
 }
 .navbar-center ul,
 .navbar-right ul {
@@ -66,9 +67,9 @@ nav {
 	.navbar-left .menu {
 		display: none;
 	}
-	.logo{
-		position: relative;
-		top: 20px;
+	.navbar-center .logo {
+		width: 100px;
+		display: block;
 	}
 	.navbar-left .menu-icon{
 		display: inline-block;
