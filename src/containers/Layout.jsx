@@ -10,10 +10,19 @@ const Layout = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/login">Login</Link>
+                        <Link to="/loginPage">Login</Link>
                     </li>
                     <li>
                         <Link to="/recovery">Recovery Password</Link>
+                    </li>
+                    <li>
+                        <Link to="/recoveryVerification">Recovery Password Verification</Link>
+                    </li>
+                    <li>
+                        <Link to="/createAccount">Create Account</Link>
+                    </li>
+                    <li>
+                        <Link to="/myAccount">My Account</Link>
                     </li>
                 </ul>
             </nav>
