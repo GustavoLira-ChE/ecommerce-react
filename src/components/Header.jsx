@@ -4,8 +4,11 @@ import './../styles/header.scss'
 const Header = () => {
     return(
         <nav>
-			<img src="./assets/logos/logo_yard_sale.svg" alt="menu" className="menu" />
 			<div className="navbar-left">
+				<img src="./assets/logos/logo_yard_sale.svg" alt="menu" className="menu" />
+				<img src="./assets/icons/icon_menu.svg" alt="celphone icon" className="menu-icon"/>
+			</div>
+			<div className="navbar-center">
 				<img src="./assets/logos/logo_yard_sale.svg" alt="logo" className="logo" />
 				<ul>
 					<li>

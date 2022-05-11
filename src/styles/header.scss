@@ -1,14 +1,17 @@
 nav {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding: 0 24px;
 	border-bottom: 1px solid var(--very-light-pink);
 }
-
+.navbar-left .menu-icon{
+	display: none;
+}
 .logo {
 	width: 100px;
 }
-.navbar-left ul,
+.navbar-center ul,
 .navbar-right ul {
 	list-style: none;
 	padding: 0;
@@ -17,13 +20,13 @@ nav {
 	align-items: center;
 	height: 60px;
 }
-.navbar-left {
+.navbar-center {
 	display: flex;
 }
-.navbar-left ul {
+.navbar-center ul {
 	margin-left: 12px;
 }
-.navbar-left ul li a,
+.navbar-center ul li a,
 .navbar-right ul li a {
 	text-decoration: none;
 	color: var(--very-light-pink);
@@ -31,7 +34,7 @@ nav {
 	padding: 8px;
 	border-radius: 8px;
 }
-.navbar-left ul li a:hover,
+.navbar-center ul li a:hover,
 .navbar-right ul li a:hover {
 	border: 1px solid var(--hospital-green);
 	color: var(--hospital-green);
@@ -59,10 +62,21 @@ nav {
 	align-items: center;
 }
 @media (max-width: 640px) {
-	.menu {
+	.navbar-left .menu {
 		display: none;
 	}
-	.navbar-left ul {
+	.logo{
+		position: relative;
+		top: 20px;
+	}
+	.navbar-left .menu-icon{
+		display: inline-block;
+	}
+	.navbar-center{
+		display: grid;
+		place-content: center;
+	}
+	.navbar-center ul {
 		display: none;
 	}
 	.navbar-email {
