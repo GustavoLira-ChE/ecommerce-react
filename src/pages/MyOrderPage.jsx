@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
-import MyOrderDetails from "../components/MyOrderDetails";
-import MyOrder from "../components/MyOrder";
+import MyOrderDetails from "../containers/MyOrderDetails";
+import MyOrder from "../containers/MyOrder";
 
 const MyOrderPage = () => {
     return(
