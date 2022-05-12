@@ -1,6 +1,11 @@
 @import url(./global.css);
 .mobile-menu {
     padding: 24px;
+    position: absolute;
+    left: 50px;
+    top: 60px;
+    background-color: white;
+    border: 1px solid var(--very-light-pink);
 }
 
 .mobile-menu a {

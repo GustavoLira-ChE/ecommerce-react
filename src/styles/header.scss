@@ -5,6 +5,7 @@ nav {
 	align-items: center;
 	padding: 0 24px;
 	border-bottom: 1px solid var(--very-light-pink);
+	position: relative;
 }
 .navbar-left .menu-icon{
 	display: none;
@@ -45,6 +46,9 @@ nav {
 	color: var(--very-light-pink);
 	font-size: var(--sm);
 	margin-right: 12px;
+}
+.navbar-email:hover{
+	pointer-events: painted;
 }
 .navbar-shopping-cart {
 	position: relative;
