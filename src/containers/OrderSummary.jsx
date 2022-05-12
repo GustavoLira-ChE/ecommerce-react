@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/oderSummary.scss";
+import "../styles/orderSummary.scss";
 
 const OrderSummary = () => {
     return(
