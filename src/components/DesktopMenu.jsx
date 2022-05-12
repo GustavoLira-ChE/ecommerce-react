@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
 import '../styles/desktopMenu.scss';
 
 const DesktopMenu = () => {
@@ -6,10 +7,10 @@ const DesktopMenu = () => {
         <div className="desktop-menu">
             <ul>
                 <li>
-                    <a href="/" className="title">My orders</a>
+                    <Link to="/myorder">My Order</Link>
                 </li>
                 <li>
-                    <a href="/">My account</a>
+                    <Link to="/myAccount">My Account</Link>
                 </li>
                 <li>
                     <a href="/">Sign out</a>

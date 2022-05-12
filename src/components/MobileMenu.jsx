@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
 import '../styles/mobileMenu.scss';
 
 const MobileMenu = () => {
@@ -29,10 +30,10 @@ const MobileMenu = () => {
             </ul>
             <ul>
                 <li>
-                    <a href="/">My orders</a>
+                    <Link to="/myorder">My Order</Link>
                 </li>
                 <li>
-                    <a href="/">My account</a>
+                    <Link to="/myAccount">My Account</Link>
                 </li>
             </ul>
             <ul>
