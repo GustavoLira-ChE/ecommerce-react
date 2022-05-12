@@ -24,6 +24,9 @@ const Layout = () => {
                     <li>
                         <Link to="/myAccount">My Account</Link>
                     </li>
+                    <li>
+                        <Link to="/myorder">My Order</Link>
+                    </li>
                 </ul>
             </nav>
             <Outlet />

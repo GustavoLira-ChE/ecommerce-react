@@ -9,6 +9,7 @@ import RecoveryPasswordPage from "../pages/RecoveryPasswordPage";
 import RecoveryPasswordVerificationPage from "../pages/RecoveryPasswordVerificationPage";
 import CreateAccountPage from "../pages/CreateAccountPage";
 import MyAccountPage from "../pages/MyAccountPage";
+import MyorderPage from "../pages/MyOrderPage"
 
 const App = () => {
     return(
@@ -21,6 +22,7 @@ const App = () => {
                     <Route path="myAccount" element={<MyAccountPage />} />
                     <Route path="recovery" element={<RecoveryPasswordPage />} />
                     <Route path="recoveryVerification" element={<RecoveryPasswordVerificationPage />} />
+                    <Route path="myorder" element={<MyorderPage />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
