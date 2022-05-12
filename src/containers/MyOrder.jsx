@@ -1,6 +1,6 @@
 import React from 'react';
-import OrderSummary from '../containers/OrderSummary';
-import ShoppingCard from '../containers/ShoppingCard';
+import OrderSummary from '../components/OrderSummary';
+import ShoppingCard from '../components/ShoppingCard';
 import "../styles/myOrder.scss";
 
 const MyOrder = () => {

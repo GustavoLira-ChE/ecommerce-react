@@ -1,5 +1,5 @@
 import React from 'react';
-import ShoppingCard from '../containers/ShoppingCard';
+import ShoppingCard from '../components/ShoppingCard';
 
 const MyOrderDetails = () => {
     return(
