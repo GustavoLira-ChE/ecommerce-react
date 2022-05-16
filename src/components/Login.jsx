@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './../styles/login.scss';
 
 const Login = () => {
+    
+    const form = useRef(null);
+    console.log(form)
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(form.current);
+        const data = {
+            username: formData.get('email'),
+            password: formData.get('password')
+        }
+        console.log(data);
+    };
+
     return(
         <div className="login">
             <div className="form-container">
-                <form action="/" className="form">
+                <form action="/" className="form" ref={form}>
                     <label htmlFor="email" className="label">Email address</label>
-                    <input type="text" id="email" placeholder="platzi@example.cm" className="input input-email" />
+                    <input type="text" name="email" placeholder="platzi@example.cm" className="input input-email" />
                     <label htmlFor="password" className="label">Password</label>
-                    <input type="password" id="password" placeholder="*********" className="input input-password" />
-                    <input type="submit" value="Log in" className="primary-button login-button" />
+                    <input type="password" name="password" placeholder="*********" className="input input-password" />
+                    <button type="submit" onClick={handleSubmit} className="primary-button login-button">
+                        Log In
+                    </button>
                     <a href="/">Forgot my password</a>
                 </form>
 
@@ -18,6 +34,6 @@ const Login = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Login;
