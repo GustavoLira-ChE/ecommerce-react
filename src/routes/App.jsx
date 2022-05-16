@@ -9,24 +9,29 @@ import RecoveryPasswordPage from "../pages/RecoveryPasswordPage";
 import RecoveryPasswordVerificationPage from "../pages/RecoveryPasswordVerificationPage";
 import CreateAccountPage from "../pages/CreateAccountPage";
 import MyAccountPage from "../pages/MyAccountPage";
-import MyorderPage from "../pages/MyOrderPage"
+import MyorderPage from "../pages/MyOrderPage";
+import AppContext from "../context/AppContext";
+import useInitialState from "../hooks/useInitialState";
 
 const App = () => {
+    const initialState = useInitialState();
     return(
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
-                    <Route path="loginPage" element={<LoginPage />} />
-                    <Route path="createAccount" element={<CreateAccountPage />} />
-                    <Route path="myAccount" element={<MyAccountPage />} />
-                    <Route path="recovery" element={<RecoveryPasswordPage />} />
-                    <Route path="recoveryVerification" element={<RecoveryPasswordVerificationPage />} />
-                    <Route path="myorder" element={<MyorderPage />} />
-                    <Route path="*" element={<NotFound />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <AppContext.Provider value={initialState}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Home />} />
+                        <Route path="loginPage" element={<LoginPage />} />
+                        <Route path="createAccount" element={<CreateAccountPage />} />
+                        <Route path="myAccount" element={<MyAccountPage />} />
+                        <Route path="recovery" element={<RecoveryPasswordPage />} />
+                        <Route path="recoveryVerification" element={<RecoveryPasswordVerificationPage />} />
+                        <Route path="myorder" element={<MyorderPage />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </AppContext.Provider>
         
     );
 }
