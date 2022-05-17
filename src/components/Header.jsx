@@ -4,8 +4,11 @@ import MobileMenu from "./MobileMenu";
 import AppContext from "../context/AppContext";
 import './../styles/header.scss';
 import MyOrderDetails from "../containers/MyOrderDetails";
+import { Link } from "react-router-dom";
+import userInitialState from "../hooks/useUser";
 
 const Header = () => {
+	const liStyle = {textDecoration: 'none'}
 	//Handle menus
 	const [toggleDesktop, setToggleDesktop] =useState(false);
 	const [toggleMobile, setToggleMobile] = useState(false);
@@ -23,11 +26,14 @@ const Header = () => {
 	}
 	//Handle items inside cart
 	const { state } = useContext(AppContext);
+	//User state
+	const useUser = userInitialState();
+	console.log(useUser);
 
     return(
         <nav>
 			<div className="navbar-left">
-				<img src="./assets/logos/logo_yard_sale.svg" alt="menu" className="menu" />
+				<Link to="/"><img src="./assets/logos/logo_yard_sale.svg" alt="menu" className="menu" /></Link>
 				<figure onClick={handleToggleMobile}>
 					<img src="./assets/icons/icon_menu.svg" alt="celphone icon" className="menu-icon"/>
 				</figure>
@@ -58,7 +64,8 @@ const Header = () => {
 			</div>
 			<div className="navbar-right">
 				<ul>
-					<li className="navbar-email" onClick={handleToggleDesktop}>platzi@example.com</li>
+					{useUser.email === null ? <Link style={liStyle} to="/loginPage"><li className="navbar-email"> Login </li></Link> : <li className="navbar-email" onClick={handleToggleDesktop}>{useUser.email}</li>}
+					
 					<li className="navbar-shopping-cart">
 						<img src="./assets/icons/icon_shopping_cart.svg" alt="shopping cart" onClick={handleToggleMyOrder} />
 						{toggleMyOrder && <MyOrderDetails />}
