@@ -6,7 +6,7 @@ const NotFound = () => {
     return(
         <div>
             <Header />
-            <h1>
+            <h1 className="notFoundTitle">
                 Not Found, error 404. <strong>:(</strong>
             </h1>
         </div>
