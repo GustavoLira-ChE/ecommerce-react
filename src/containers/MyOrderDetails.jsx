@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ShoppingCard from '../components/ShoppingCard';
+import '../styles/myOrderDetails.scss';
+import AppContext from "../context/AppContext";
+
 
 const MyOrderDetails = () => {
+    const {state} = useContext(AppContext);
+    const totalPrice = () => {
+        const reducer = (sum, num) => sum + num.price;
+        const sum = state.cart.reduce(reducer,0);
+        return sum;
+    }
     return(
         <aside className="product-detail">
             <div className="title-container">
@@ -10,15 +19,14 @@ const MyOrderDetails = () => {
                 </div>
 
                 <div className="my-order-content">
-                <ShoppingCard />
-                <ShoppingCard />
-                <ShoppingCard />
-                <ShoppingCard />
+                {state.cart.map(item => (
+                    <ShoppingCard product={item} key={`orderItem-${item.id}`} />
+                ))}
                 <div className="order">
                     <p>
                     <span>Total</span>
                     </p>
-                    <p>$560.00</p>
+                    <p>${totalPrice()}</p>
                 </div>
                 <button className="primary-button">
                     Checkout
