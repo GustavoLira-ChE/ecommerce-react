@@ -7,19 +7,7 @@ const Layout = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/loginPage">Login</Link>
-                    </li>
-                    <li>
-                        <Link to="/recovery">Recovery Password</Link>
-                    </li>
-                    <li>
                         <Link to="/recoveryVerification">Recovery Password Verification</Link>
-                    </li>
-                    <li>
-                        <Link to="/createAccount">Create Account</Link>
                     </li>
                 </ul>
             </nav>
