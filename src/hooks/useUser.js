@@ -9,9 +9,14 @@ const useUser = () => {
         setUser(validation);
     };
 
+    const userLogout = () => {
+        setUser({email: null});
+    };
+
     return{
         user,
-        userValidation
+        userValidation,
+        userLogout
     };
 };
 
