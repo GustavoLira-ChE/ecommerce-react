@@ -17,7 +17,7 @@ const Login = () => {
             email: formData.get("email"),
             password: formData.get("password")
         }
-        userValidation(data)
+        userValidation(data);
     };
 
     return(
