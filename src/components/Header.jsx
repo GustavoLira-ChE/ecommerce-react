@@ -5,6 +5,7 @@ import AppContext from "../context/AppContext";
 import './../styles/header.scss';
 import MyOrderDetails from "../containers/MyOrderDetails";
 import { Link } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const Header = () => {
 	const liStyle = {textDecoration: 'none'};
@@ -26,7 +27,7 @@ const Header = () => {
 	//Handle items inside cart
 	const { state } = useContext(AppContext);
 	//User state
-	const useUser = {email: null}
+	const { user } = useContext(UserContext);
 
     return(
         <nav>
@@ -62,7 +63,7 @@ const Header = () => {
 			</div>
 			<div className="navbar-right">
 				<ul>
-					{useUser.email === null ? <Link style={liStyle} to="/loginPage"><li className="navbar-email"> Login </li></Link> : <li className="navbar-email" onClick={handleToggleDesktop}>{useUser.email}</li>}
+					{user.email === null ? <Link style={liStyle} to="/loginPage"><li className="navbar-email"> Login </li></Link> : <li className="navbar-email" onClick={handleToggleDesktop}>{user.email}</li>}
 					
 					<li className="navbar-shopping-cart">
 						<img src="./assets/icons/icon_shopping_cart.svg" alt="shopping cart" onClick={handleToggleMyOrder} />
