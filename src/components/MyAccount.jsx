@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import '../styles/myAccount.scss';
+import UserContext from "../context/UserContext";
 
 const MyAccount = () => {
+    const { user } = useContext(UserContext);
     return (
         <div className="login">
             <div className="form-container">
@@ -9,9 +11,9 @@ const MyAccount = () => {
                 <form action="/" className="form">
                     <div>
                         <label htmlFor="name" className="label">Name</label>
-                        <p className="value">Camila Yokoo</p>
+                        <p className="value">{user.name}</p>
                         <label htmlFor="email" className="label">Email</label>
-                        <p className="value">camilayokoo@gmail.com</p>
+                        <p className="value">{user.email}</p>
                         <label htmlFor="password" className="label">Password</label>
                         <p className="value">*********</p>
                     </div>
