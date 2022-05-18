@@ -1,8 +1,12 @@
-import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import React, {useContext} from "react";
+import { Link } from "react-router-dom";
 import '../styles/mobileMenu.scss';
+import UserContext from "../context/UserContext";
 
 const MobileMenu = () => {
+    const liStyle = {textDecoration: 'none'};
+    //User state
+	const { user } = useContext(UserContext);
     return(
         <div className="mobile-menu">
             <ul>
@@ -37,12 +41,8 @@ const MobileMenu = () => {
                 </li>
             </ul>
             <ul>
-                <li>
-                    <a href="/" className="email">platzi@example.com</a>
-                </li>
-                <li>
-                    <a href="/" className="sign-out">Sign out</a>
-                </li>
+                {user.email === null ? <Link style={liStyle} to="/loginPage"><li> Login </li></Link> : <li>{user.email}</li>}
+                {user.email === null ? null : <li><a href="/" className="sign-out">Sign out</a></li>}  
             </ul>
         </div>
     );
