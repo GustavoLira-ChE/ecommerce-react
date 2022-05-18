@@ -6,7 +6,7 @@ import UserContext from "../context/UserContext";
 const MobileMenu = () => {
     const liStyle = {textDecoration: 'none'};
     //User state
-	const { user } = useContext(UserContext);
+	const { user, userLogout } = useContext(UserContext);
     return(
         <div className="mobile-menu">
             <ul>
@@ -42,7 +42,7 @@ const MobileMenu = () => {
             </ul>
             <ul>
                 {user.email === null ? <Link style={liStyle} to="/loginPage"><li> Login </li></Link> : <li>{user.email}</li>}
-                {user.email === null ? null : <li><a href="/" className="sign-out">Sign out</a></li>}  
+                {user.email === null ? null : <li><a href="/" className="sign-out" onClick={userLogout}>Sign out</a></li>}  
             </ul>
         </div>
     );

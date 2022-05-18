@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import '../styles/desktopMenu.scss';
+import UserContext from "../context/UserContext";
 
 const DesktopMenu = () => {
+    const { userLogout } = useContext(UserContext);
     return(
         <div className="desktop-menu">
             <ul>
@@ -13,7 +15,7 @@ const DesktopMenu = () => {
                     <Link to="/myAccount">My Account</Link>
                 </li>
                 <li>
-                    <a href="/">Sign out</a>
+                    <a href="/" onClick={userLogout}>Sign out</a>
                 </li>
             </ul>
         </div>
