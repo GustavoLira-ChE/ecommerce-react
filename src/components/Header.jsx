@@ -5,10 +5,9 @@ import AppContext from "../context/AppContext";
 import './../styles/header.scss';
 import MyOrderDetails from "../containers/MyOrderDetails";
 import { Link } from "react-router-dom";
-import userInitialState from "../hooks/useUser";
 
 const Header = () => {
-	const liStyle = {textDecoration: 'none'}
+	const liStyle = {textDecoration: 'none'};
 	//Handle menus
 	const [toggleDesktop, setToggleDesktop] =useState(false);
 	const [toggleMobile, setToggleMobile] = useState(false);
@@ -27,8 +26,7 @@ const Header = () => {
 	//Handle items inside cart
 	const { state } = useContext(AppContext);
 	//User state
-	const useUser = userInitialState();
-	console.log(useUser);
+	const useUser = {email: null}
 
     return(
         <nav>
