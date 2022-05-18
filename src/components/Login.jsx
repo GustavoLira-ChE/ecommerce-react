@@ -1,13 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import './../styles/login.scss';
 import { Link } from "react-router-dom";
-import UserController from "../../lib/controllers/UserController";
+import UserContext from '../context/UserContext';
+
 
 const Login = () => {
     const liStyle = {textDecoration: 'none', color: 'inherit'};
     const form = useRef(null);
+    const { userValidation } = useContext(UserContext);
 
-    const [user, setUser] = useState({});
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,9 +17,7 @@ const Login = () => {
             email: formData.get("email"),
             password: formData.get("password")
         }
-        console.log(data);
-        const validation = UserController.userValidation(data);
-        setUser(validation);
+        userValidation(data)
     };
 
     return(
