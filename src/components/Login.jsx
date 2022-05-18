@@ -28,7 +28,7 @@ const Login = () => {
                     <input 
                         type="text" 
                         name="email" 
-                        placeholder="platzi@example.cm" 
+                        placeholder="correo@example.com" 
                         className="input input-email" />
                     <label htmlFor="password" className="label">Password</label>
                     <input 
