@@ -1,20 +1,24 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import './../styles/login.scss';
 import { Link } from "react-router-dom";
+import UserController from "../../lib/controllers/UserController";
 
 const Login = () => {
     const liStyle = {textDecoration: 'none', color: 'inherit'};
     const form = useRef(null);
-    console.log(form)
+
+    const [user, setUser] = useState({});
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(form.current);
         const data = {
-            email: formData.get('email'),
-            password: formData.get('password')
+            email: formData.get("email"),
+            password: formData.get("password")
         }
         console.log(data);
+        const validation = UserController.userValidation(data);
+        setUser(validation);
     };
 
     return(
@@ -22,9 +26,17 @@ const Login = () => {
             <div className="form-container">
                 <form action="/" className="form" ref={form}>
                     <label htmlFor="email" className="label">Email address</label>
-                    <input type="text" name="email" placeholder="platzi@example.cm" className="input input-email" />
+                    <input 
+                        type="text" 
+                        name="email" 
+                        placeholder="platzi@example.cm" 
+                        className="input input-email" />
                     <label htmlFor="password" className="label">Password</label>
-                    <input type="password" name="password" placeholder="*********" className="input input-password" />
+                    <input 
+                        type="password"
+                        name="password" 
+                        placeholder="*********" 
+                        className="input input-password" />
                     <button type="submit" onClick={handleSubmit} className="primary-button login-button">
                         Log In
                     </button>
