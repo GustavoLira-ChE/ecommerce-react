@@ -13,10 +13,15 @@ const useUser = () => {
         setUser({email: null});
     };
 
+    const newUserRegistration = (data) => {
+        const validation = UserController.userRegisterSubmit(data);
+    }
+
     return{
         user,
         userValidation,
-        userLogout
+        userLogout,
+        newUserRegistration
     };
 };
 
