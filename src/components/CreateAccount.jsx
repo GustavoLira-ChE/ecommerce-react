@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import './../styles/createAccount.scss';
 import UserContext from "../context/UserContext";
 
 const CreateAccount = () => {
-    
+    const { newUserRegistration } = useContext(UserContext); 
     const form = useRef(null);
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -13,7 +13,7 @@ const CreateAccount = () => {
             email: formData.get('email'),
             password: formData.get('password'),
         }
-        console.log(data);
+        newUserRegistration(data);
     }
 
     return(
