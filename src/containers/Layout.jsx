@@ -1,16 +1,10 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
+//This component helps to render the children inside Layout
 const Layout = () => {
     return(
         <div className="Layout">
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/recoveryVerification">Recovery Password Verification</Link>
-                    </li>
-                </ul>
-            </nav>
             <Outlet />
         </div>
     );
